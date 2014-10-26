@@ -1,0 +1,67 @@
+	
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Congreso de sistemas 2014</title><!--Titulo de mi web-->
+         <meta charset="utf-8" /><!--Codificacion de caracteres-->
+         <link href="{% static "css/estilo.css" %}" rel="stylesheet"><!--Estilos cargados desde un archivo-->
+         <meta name="author" content="Sandra Valencia"><!--Autor-->
+    </head>
+    <body>
+        <header><!--Cabecera principal de mi sitio-->
+            <div class="logo">
+                <a href="#">
+                    Example
+                </a>
+            </div><!--URL de Mi Logo-->
+            <div id="menu-s">
+                <nav class="menu"><!--Menu-->
+                    <ul class="menu-nav">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="#">Conferencistas</a></li>
+                        <li><a href="#">Talleres</a></li>
+                        <li><a href="#">Conferencias</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--Contenido del sitio-->
+        <div class="head-image"><!--Imagen de cabecera-->
+            <img src="{% static "img/geek.jpg" %}">
+        </div>
+        <!--Contenido general-->
+        <div class="fila">
+            <!--Articulos-->
+            <section class="contenido">
+                <article class="art">
+                    <h1>Talleres</h1><!--Titulo de articulo-->
+                    <ul>
+                    	{% for t in workshops %}
+                    	<li>{{t.name}}</li>
+                    	{% endfor %}
+                    </ul><!--Contenido de articulo-->
+                </article>
+                 <article class="art">
+                    <h1>Conferencias</h1><!--Titulo de articulo-->
+                    <ul>
+                    	{% for c in conferences %}
+                    	<li>{{c.name}}</li>
+                    	{% endfor %}
+                    </ul><!--Contenido de articulo-->
+                </article>
+            </section>
+            <!--Sidebar derecho-->
+            <aside class="sidebar">
+                <h1>Horarios</h1>
+                <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            </aside>
+        </div>
+       <!--Footer-->
+        <footer class="footer">
+            <p>
+                Copyright © 2014 Example | Creado y diseñado por <a href="#">Tingsystems</a>
+            </p>    
+        </footer>
+    </body>
+</html>
