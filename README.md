@@ -1,4 +1,4 @@
-congress
+Congress
 ========
 
-congress of systems 2014
+Congress of systems engineering 2014

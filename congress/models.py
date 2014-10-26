@@ -53,6 +53,7 @@ class Conference(BasePresentations):
 class Workshops(BasePresentations):
     rapporteur = models.ForeignKey(Rapporteur, related_name="Rapporteur")
     placesAvailable = models.IntegerField(_("Places available"), default=20)
+    requirements = models.CharField(_("Requirements"), max_length=180, default="Laptop")
 
     class Meta:
         verbose_name = "Workshop"
